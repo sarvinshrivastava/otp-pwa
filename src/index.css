@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+/* Tailwind v4 is configured CSS-first (no tailwind.config content array needed
+   for a Vite SPA — the @tailwindcss/vite plugin scans source automatically).
+   Theme tokens below are exposed as utilities, e.g. `font-mono`, `bg-base`. */
+@theme {
+  --color-base: #0a0a0a;
+  --color-surface: #141414;
+  --color-border: #262626;
+  --color-accent: #4ade80;
+  --color-danger: #f87171;
+  --font-mono:
+    ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono',
+    monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-base);
+  color: #fafafa;
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* respect iOS safe areas for the installed PWA */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
